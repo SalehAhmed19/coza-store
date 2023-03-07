@@ -30,8 +30,10 @@ const Banner = () => {
           {data.map((d) => (
             <div className="keen-slider__slide flex justify-between bg-[#E5DFDD]">
               <div className="flex flex-col justify-center h-screen lg:ml-24">
-                <h4>{d.sub}</h4>
-                <h1 className="text-3xl lg:text-6xl font-bold">{d.title}</h1>
+                <h4 className="text-2xl">{d.sub}</h4>
+                <h1 className="text-3xl lg:text-6xl font-bold my-5 font-[Playfair]">
+                  {d.title}
+                </h1>
                 <button className="bg-[#717FDF] w-40 p-3 rounded-full text-white font-bold">
                   SHOP NOW
                 </button>
