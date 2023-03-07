@@ -1,10 +1,8 @@
-import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import React from "react";
 import card1 from "../Assets/img/card1-img1.jpg";
 import card2 from "../Assets/img/card1-img2.jpg";
 import card3 from "../Assets/img/card1-img3.jpg";
 import "../Styles/Categories.css";
-import { TfiLayoutGrid2Alt, TfiLayoutGrid3Alt } from "react-icons/tfi";
 
 const Categories = () => {
   const data = [
@@ -12,33 +10,9 @@ const Categories = () => {
     { _id: 2, title: "Men", subtitle: "Spring 2023", img: card2 },
     { _id: 3, title: "Accessories", subtitle: "New Trend", img: card3 },
   ];
-  const [view, setView] = React.useState("col3");
-
-  const handleChange = (event, nextView) => {
-    setView(nextView);
-  };
   return (
     <div className="py-20 lg:mx-20">
-      <ToggleButtonGroup
-        style={{ margin: "10px 0" }}
-        orientation="horizontal"
-        value={view}
-        exclusive
-        onChange={handleChange}
-      >
-        <ToggleButton value="col2" aria-label="list">
-          <TfiLayoutGrid2Alt />
-        </ToggleButton>
-        <ToggleButton value="col3" aria-label="module">
-          <TfiLayoutGrid3Alt />
-        </ToggleButton>
-      </ToggleButtonGroup>
-      <div
-        className={
-          (view === "col2" && "grid grid-cols-2 gap-5") ||
-          (view === "col3" && "grid grid-cols-3 gap-5")
-        }
-      >
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         {data.map((d) => (
           <div
             className="border flex justify-between c-card relative"
