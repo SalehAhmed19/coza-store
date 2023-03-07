@@ -28,7 +28,7 @@ const Banner = () => {
       <div className="navigation-wrapper">
         <div ref={sliderRef} className="keen-slider h-screen">
           {data.map((d) => (
-            <div className="keen-slider__slide flex justify-between bg-[#E5DFDD]">
+            <div className="keen-slider__slide flex flex-col lg:flex-row pt-36 lg:pt-0 justify-between bg-[#E5DFDD]">
               <div className="flex flex-col justify-center h-screen lg:ml-24">
                 <h4 className="text-2xl">{d.sub}</h4>
                 <h1 className="text-3xl lg:text-6xl font-bold my-5 font-[Playfair]">

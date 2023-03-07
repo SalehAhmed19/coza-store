@@ -25,11 +25,11 @@ const DrawerAppBar = () => {
     <div
       className={
         active
-          ? "navbar fixed bg-[#000] text-[#000] z-10 px-20"
+          ? "navbar fixed bg-[#E5DFDD] text-[#000] z-10 px-20"
           : "navbar fixed bg-transparent text-[#000] z-10 px-20"
       }
     >
-      <div className="navbar-start">
+      <div className="navbar-start p-6">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg

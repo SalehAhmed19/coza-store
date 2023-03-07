@@ -1,0 +1,9 @@
+
+.hover-button{
+    display: none;
+}
+.c-card:hover .hover-button{
+    display: block;
+    transition: ease 1.5s;
+    font-weight: 800;
+}
