@@ -5,6 +5,7 @@ import "../Styles/Banner.css";
 import img1 from "../Assets/Banner/img1.png";
 import img2 from "../Assets/Banner/img2.png";
 import img3 from "../Assets/Banner/img3.png";
+import { Fade, Zoom } from "react-reveal";
 
 const Banner = () => {
   const data = [
@@ -29,17 +30,27 @@ const Banner = () => {
         <div ref={sliderRef} className="keen-slider h-screen">
           {data.map((d) => (
             <div className="keen-slider__slide flex flex-col lg:flex-row pt-36 lg:pt-0 justify-between bg-[#E5DFDD]">
-              <div className="flex flex-col justify-center h-screen lg:ml-24">
-                <h4 className="text-2xl">{d.sub}</h4>
-                <h1 className="text-3xl lg:text-6xl font-bold my-5 font-[Playfair]">
-                  {d.title}
-                </h1>
-                <button className="bg-[#717FDF] w-40 p-3 rounded-full text-white font-bold">
-                  SHOP NOW
-                </button>
-              </div>
+              <Fade left>
+                <div className="flex flex-col justify-center h-screen lg:ml-24">
+                  <Zoom>
+                    <h4 className="text-2xl">{d.sub}</h4>
+                  </Zoom>
+                  <Zoom>
+                    <h1 className="text-3xl lg:text-6xl font-bold my-5 font-[Playfair]">
+                      {d.title}
+                    </h1>
+                  </Zoom>
+                  <Zoom>
+                    <button className="bg-[#717FDF] w-40 p-3 rounded-full text-white font-bold">
+                      SHOP NOW
+                    </button>
+                  </Zoom>
+                </div>
+              </Fade>
               <div className="mr-20">
-                <img className="w-[465px]" src={d.img} alt="" />
+                <Fade right>
+                  <img className="w-[465px]" src={d.img} alt="" />
+                </Fade>
               </div>
             </div>
           ))}

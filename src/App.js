@@ -4,7 +4,7 @@ import Footer from "./Shared/Footer";
 
 function App() {
   return (
-    <div className="App">
+    <div style={{ fontFamily: "Poppins" }} className="App">
       <DrawerAppBar />
       <Home />
       <Footer />

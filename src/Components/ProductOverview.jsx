@@ -22,6 +22,9 @@ import img14 from "../Assets/img/product14.webp";
 import img15 from "../Assets/img/product15.webp";
 import img16 from "../Assets/img/product16.webp";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import Product from "./Product";
+import { Zoom } from "react-reveal";
+import { Link } from "react-router-dom";
 
 const ProductOverview = () => {
   const products = [
@@ -158,24 +161,11 @@ const ProductOverview = () => {
         }
       >
         {products.map((product) => (
-          <div>
-            <img src={product.img} alt="" />
-            <div className="flex justify-between items-center">
-              <div>
-                <h4 className="my-2 text-[#999999]">{product.name}</h4>
-                <p className="text-[#666666]">${product.price}</p>
-              </div>
-              <label className="swap">
-                <input type="checkbox" />
-                <div className="swap-on">
-                  <AiFillHeart />
-                </div>
-                <div className="swap-off">
-                  <AiOutlineHeart />
-                </div>
-              </label>
-            </div>
-          </div>
+          <Zoom>
+            <Link to="/product">
+              <Product key={product._id} product={product} />
+            </Link>
+          </Zoom>
         ))}
       </div>
     </div>
